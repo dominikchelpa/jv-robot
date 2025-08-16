@@ -44,9 +44,10 @@ public class RobotRoute {
     }
 
     private void turnToDirection(Robot robot, Direction targetDirection) {
-        while (robot.getDirection() != targetDirection) {
+        int attempts = 0;
+        while (robot.getDirection() != targetDirection && attempts < 4) {
             robot.turnRight();
+            attempts++;
         }
     }
-
 }
