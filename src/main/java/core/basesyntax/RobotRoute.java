@@ -3,7 +3,6 @@ package core.basesyntax;
 public class RobotRoute {
 
     public void moveRobot(Robot robot, int toX, int toY) {
-
         moveHorizontally(robot, toX);
         moveVertically(robot, toY);
     }
@@ -13,15 +12,12 @@ public class RobotRoute {
 
         if (currentX < toX) {
             turnToDirection(robot, Direction.RIGHT);
-
             int stepsToTake = toX - currentX;
             for (int i = 0; i < stepsToTake; i++) {
                 robot.stepForward();
             }
-
         } else if (currentX > toX) {
             turnToDirection(robot, Direction.LEFT);
-
             int stepsToTake = currentX - toX;
             for (int i = 0; i < stepsToTake; i++) {
                 robot.stepForward();
@@ -34,15 +30,12 @@ public class RobotRoute {
 
         if (currentY < toY) {
             turnToDirection(robot, Direction.UP);
-
             int stepsToTake = toY - currentY;
             for (int i = 0; i < stepsToTake; i++) {
                 robot.stepForward();
             }
-
         } else if (currentY > toY) {
             turnToDirection(robot, Direction.DOWN);
-
             int stepsToTake = currentY - toY;
             for (int i = 0; i < stepsToTake; i++) {
                 robot.stepForward();
@@ -50,13 +43,9 @@ public class RobotRoute {
         }
     }
 
-
     private void turnToDirection(Robot robot, Direction targetDirection) {
         while (robot.getDirection() != targetDirection) {
             robot.turnRight();
         }
     }
-    }
-
-
-
+}
